@@ -151,19 +151,37 @@ class TicketView extends StatelessWidget {
                 color: Styles.orangecolor
               ),
               child: Container(
-                padding: EdgeInsets.only(left: 16,right: 16, top: 10),
+                padding: EdgeInsets.only(left: 16,right: 16, top: 10,bottom: 16),
                 child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SizedBox(
-                            width: 100
-                            ,child: Text("1 May", style: Styles.headLineStyle3.copyWith(color: Colors.white),)),
-                        Text("08:00 AM", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                          width: MediaQuery.of(context).size.width/4,
+                          child: Text(
+                            "1 May",
+                            style: Styles.headLineStyle3.copyWith(color: Colors.white),
+                          ),
+                        ),
+                        // Expanded(child: Container()),
                         SizedBox(
-                            width: 100,
-                            child: Text("23", textAlign: TextAlign.end,style: Styles.headLineStyle3.copyWith(color: Colors.white),)),
+                          width: MediaQuery.of(context).size.width/4,
+                          child: Text(
+                            "08:00 AM",
+                            textAlign: TextAlign.center,
+                            style: Styles.headLineStyle3.copyWith(color: Colors.white),
+                          ),
+                        ),
+                        // Expanded(child: Container()),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width/4,
+                          child: Text(
+                            "23",
+                            textAlign: TextAlign.end,
+                            style: Styles.headLineStyle3.copyWith(color: Colors.white),
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -172,15 +190,41 @@ class TicketView extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
-                            width: 100
-                            ,child: Text("Date", style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
-                        Text("Departure time", style: Styles.headLineStyle4.copyWith(color: Colors.white),),
-                        SizedBox(
-                            width: 100,
-                            child: Text("Number", textAlign: TextAlign.end,style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
+                        Expanded(
+                          flex:1,
+                            child: Text("Date", textAlign: TextAlign.start, style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
+                        Expanded(
+                            flex:3,
+                            child: Text("Departure Time", textAlign: TextAlign.center, style: Styles.headLineStyle4.copyWith(color: Colors.white, height: 1.2),)),
+                        Expanded(
+                            flex:1,child: Text("Number", textAlign: TextAlign.end,style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
                       ],
                     )
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     SizedBox(
+                    //         width: 100
+                    //         ,child: Text("1 May", style: Styles.headLineStyle3.copyWith(color: Colors.white),)),
+                    //     Text("08:00 AM", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                    //     SizedBox(
+                    //         width: 100,
+                    //         child: Text("23", textAlign: TextAlign.end,style: Styles.headLineStyle3.copyWith(color: Colors.white),)),
+                    //   ],
+                    // ),
+                    // SizedBox(
+                    //   height: 8,
+                    // ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     SizedBox(
+                    //         width: MediaQuery.of(context).size.width/4,
+                    //         child: Text("Date", style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
+                    //     SizedBox(width:MediaQuery.of(context).size.width/4,child: Text("Departure time", style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
+                    //     SizedBox(width:MediaQuery.of(context).size.width/4,child: Text("Number", textAlign: TextAlign.end,style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
+                    //   ],
+                    // )
                   ],
                 ),
               ),

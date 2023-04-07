@@ -3,6 +3,8 @@ import 'package:air_ticket/utils/app_style.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
+import 'hotel_cart_screen.dart';
+
 class AirPlaneHome extends StatelessWidget {
   const AirPlaneHome({Key? key}) : super(key: key);
 
@@ -85,6 +87,7 @@ class AirPlaneHome extends StatelessWidget {
             height: 30,
           ),
           SingleChildScrollView(
+            padding: EdgeInsets.only(right: 20),
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
@@ -92,7 +95,36 @@ class AirPlaneHome extends StatelessWidget {
                 TicketView(),
               ],
             ),
-          )
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Container(
+            padding : EdgeInsets.symmetric(horizontal: 20),
+            child:   Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Hostels", style: Styles.headLineStyle1),
+                InkWell(
+                  onTap: (){
+                    print("view all clicked");
+                  },
+                  child: Text("View all", style: TextStyle(
+                      color: Colors.blue.shade600
+                  ),),
+                )
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                HotelCartScreen(),
+                HotelCartScreen(),
+              ],
+            ),
+          ),
         ],
       ),
 
