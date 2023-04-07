@@ -10,17 +10,18 @@ class TicketView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
-       height: 100,
+      width: MediaQuery.of(context).size.width*0.90,
+       // height: 100,
       child: Container(
         margin: const EdgeInsets.only(left: 20),
-        decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-            color: Color(0xFF526799)),
         child: Column(
           children: [
             Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+                color: Color(0xFF526799)),
+              height: 100,
               padding: EdgeInsets.all(16),
               child: Column(
                 children: [
@@ -34,7 +35,7 @@ class TicketView extends StatelessWidget {
                       TicketPlane(),
                       Expanded(
                         child: Stack(
-                            textDirection: TextDirection.ltr,
+                            // textDirection: TextDirection.ltr,
                             children: [
                               SizedBox(
                                 height: 24,
@@ -60,11 +61,13 @@ class TicketView extends StatelessWidget {
                                   );
                                 }),
                               ),
-                              Transform.rotate(
-                                angle: 1.6,
-                                child: const Icon(
-                                  Icons.airplanemode_active_outlined,
-                                  color: Colors.white,
+                              Center(
+                                child: Transform.rotate(
+                                  angle: 1.6,
+                                  child: const Icon(
+                                    Icons.airplanemode_active_outlined,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ]),
@@ -96,7 +99,7 @@ class TicketView extends StatelessWidget {
               ),
             ),
             Container(
-              height: 20,
+              height: 21,
               width: double.infinity,
               color: Styles.orangecolor,
               child: SizedBox(
@@ -108,8 +111,8 @@ class TicketView extends StatelessWidget {
                       width: 10,
                       height: 20,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(topRight: Radius.circular(25), bottomRight: Radius.circular(25)),
-                        color: Styles.bgcolor
+                          borderRadius: BorderRadius.only(topRight: Radius.circular(25), bottomRight: Radius.circular(25)),
+                          color: Colors.white
                       ),
                     ),
                     Expanded(
@@ -136,6 +139,48 @@ class TicketView extends StatelessWidget {
                           color: Colors.white
                       ),
                     ),
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              height: 80,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(bottomRight: Radius.circular(20),bottomLeft: Radius.circular(20)),
+                color: Styles.orangecolor
+              ),
+              child: Container(
+                padding: EdgeInsets.only(left: 16,right: 16, top: 10),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                            width: 100
+                            ,child: Text("1 May", style: Styles.headLineStyle3.copyWith(color: Colors.white),)),
+                        Text("08:00 AM", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                        SizedBox(
+                            width: 100,
+                            child: Text("23", textAlign: TextAlign.end,style: Styles.headLineStyle3.copyWith(color: Colors.white),)),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                            width: 100
+                            ,child: Text("Date", style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
+                        Text("Departure time", style: Styles.headLineStyle4.copyWith(color: Colors.white),),
+                        SizedBox(
+                            width: 100,
+                            child: Text("Number", textAlign: TextAlign.end,style: Styles.headLineStyle4.copyWith(color: Colors.white),)),
+                      ],
+                    )
                   ],
                 ),
               ),

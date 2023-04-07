@@ -84,7 +84,15 @@ class AirPlaneHome extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-          TicketView()
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                TicketView(),
+                TicketView(),
+              ],
+            ),
+          )
         ],
       ),
 
