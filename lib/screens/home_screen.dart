@@ -1,5 +1,6 @@
 import 'package:air_ticket/screens/ticket_view.dart';
 import 'package:air_ticket/utils/app_style.dart';
+import 'package:air_ticket/utils/hotel_data.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -119,10 +120,7 @@ class AirPlaneHome extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
-                HotelCartScreen(),
-                HotelCartScreen(),
-              ],
+              children: hotelsData.map((e) => HotelCartScreen(hotel: e),).toList(),
             ),
           ),
         ],

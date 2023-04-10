@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 class BottomMenu with ChangeNotifier{
- var _widgetIndex = 0;
+ var _widgetIndex = 1;
   int get widgetIndex  => _widgetIndex;
 setIndex(int index){
   // print(index);

@@ -1,4 +1,5 @@
 import 'package:air_ticket/screens/home_screen.dart';
+import 'package:air_ticket/screens/search_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +16,7 @@ class BottomNavigationAp extends StatefulWidget {
 class _BottomNavigationApState extends State<BottomNavigationAp> {
   static final List<Widget> _WidgetOption =<Widget>[
     AirPlaneHome(),
-    Center(child: const Text("Search")),
+    SearchScreen(),
     Center(child: const Text("Ticket")),
     Center(child: const Text("Person"))
   ];

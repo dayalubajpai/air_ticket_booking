@@ -2,10 +2,44 @@ import 'package:air_ticket/utils/app_style.dart';
 import 'package:flutter/material.dart';
 
 class HotelCartScreen extends StatelessWidget {
-  const HotelCartScreen({Key? key}) : super(key: key);
+  final Map<String, dynamic>hotel;
+  const HotelCartScreen({Key? key, required this.hotel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
+
+    String firstFewWordslocation(String bigSentence){
+
+      int startIndex = 0, indexOfSpace =2;
+
+      for(int i = 0; i <6; i++){
+        indexOfSpace = bigSentence.indexOf(' ', startIndex);
+        if(indexOfSpace == -1){     //-1 is when character is not found
+          return bigSentence;
+        }
+        startIndex = indexOfSpace + 1;
+      }
+
+      return bigSentence.substring(0, indexOfSpace) + '...';
+    }
+
+    String firstFewWords(String bigSentence){
+
+      int startIndex = 0, indexOfSpace =2;
+
+      for(int i = 0; i < 3; i++){
+        indexOfSpace = bigSentence.indexOf(' ', startIndex);
+        if(indexOfSpace == -1){     //-1 is when character is not found
+          return bigSentence;
+        }
+        startIndex = indexOfSpace + 1;
+      }
+
+      return bigSentence.substring(0, indexOfSpace) + '...';
+    }
+
+    print(hotel);
     return Container(
       padding: EdgeInsets.all(15),
       margin: const EdgeInsets.only(left: 20, top: 20),
@@ -28,37 +62,37 @@ class HotelCartScreen extends StatelessWidget {
                   fit: BoxFit.cover),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Container(
+          SizedBox(
             width: double.infinity,
             child: Text(
-              "Hotel : Pullman",
+              "Hotel : ${firstFewWords( hotel['name'])}",
               textAlign: TextAlign.start,
               style: Styles.headLineStyle3
                   .copyWith(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w400),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Container(
+          SizedBox(
             width: double.infinity,
             child: Text(
-              "Location : 8/32 Lilamati Building Nava Wadaj Ahmedabad.",
+              "Location : ${firstFewWordslocation(hotel['location'])}",
               textAlign: TextAlign.start,
               style: Styles.headLineStyle3
                   .copyWith(color: Colors.white, fontSize: 14,height: 1.4, fontWeight: FontWeight.w300 ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Container(
+          SizedBox(
             width: double.infinity,
             child: Text(
-              "Pin : 380001",
+              "Pin : ${hotel['pin']}",
               textAlign: TextAlign.start,
               style: Styles.headLineStyle3
                   .copyWith(color: Colors.white, fontSize: 14,height: 1.4, fontWeight: FontWeight.w300 ),
